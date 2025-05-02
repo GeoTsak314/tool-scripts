@@ -9,7 +9,7 @@ from datetime import datetime
 EMAIL = input("Enter your Facebook email: ")
 PASSWORD = input("Enter your Facebook password: ")
 USERNAME = input("Enter your Facebook username (from facebook.com/your.username): ")
-DATE_THRESHOLD = input("Delete posts/comments from which date? (YYYY-MM-DD or leave empty for all): ")
+DATE_THRESHOLD = input("Delete items from which date? (YYYY-MM-DD or leave empty for all): ")
 ENABLE_LOGGING = input("Enable logging? (yes/no): ").lower() == "yes"
 
 if DATE_THRESHOLD:
@@ -47,7 +47,6 @@ def is_after_threshold(text):
     if not DATE_THRESHOLD:
         return True
     try:
-        # Parse visible date string (e.g. "April 2021", "20 Jan 2020")
         return_date = None
         for fmt in ("%d %b %Y", "%B %Y", "%b %Y"):
             try:
@@ -68,11 +67,10 @@ def scroll_and_clean():
     while scrolls < 50:
         time.sleep(3)
 
-        actions = driver.find_elements(By.XPATH, "//div[@aria-label='Actions for this post' or                                                     @aria-label='Actions for this comment' or                                                     @aria-label='Ενέργειες για αυτήν την ανάρτηση' or                                                     @aria-label='Ενέργειες για αυτό το σχόλιο']")
+        actions = driver.find_elements(By.XPATH, "//div[@aria-label='Actions for this post' or                                                     @aria-label='Actions for this comment' or                                                     @aria-label='Actions for this like' or                                                     @aria-label='Ενέργειες για αυτήν την ανάρτηση' or                                                     @aria-label='Ενέργειες για αυτό το σχόλιο' or                                                     @aria-label='Ενέργειες για αυτό το Μου αρέσει']")
         for action in actions:
             try:
                 driver.execute_script("arguments[0].scrollIntoView(true);", action)
-
                 parent = action.find_element(By.XPATH, "./ancestor::div[contains(@data-visualcompletion, 'ignore-dynamic')]")
                 date_elems = parent.find_elements(By.XPATH, ".//span[contains(@class,'timestamp')]")
                 if date_elems and not is_after_threshold(date_elems[0].text):
@@ -83,16 +81,17 @@ def scroll_and_clean():
 
                 delete = None
                 try:
-                    delete = driver.find_element(By.XPATH, "//span[contains(text(), 'Move to Recycle Bin') or                                                             contains(text(), 'Delete') or                                                             contains(text(), 'Μετακίνηση στον Κάδο') or                                                             contains(text(), 'Διαγραφή')]")
+                    delete = driver.find_element(By.XPATH, "//span[contains(text(), 'Move to Recycle Bin') or                                                             contains(text(), 'Delete') or                                                             contains(text(), 'Unlike') or                                                             contains(text(), 'Μετακίνηση στον Κάδο') or                                                             contains(text(), 'Διαγραφή') or                                                             contains(text(), 'Αφαίρεση Μου αρέσει')]")
                 except:
                     continue
 
                 if delete:
                     delete.click()
                     time.sleep(1)
-                    confirm = driver.find_element(By.XPATH, "//div[@aria-label='Move' or                                                               @aria-label='Delete' or                                                               @aria-label='Μετακίνηση' or                                                               @aria-label='Διαγραφή']")
-                    confirm.click()
-                    log("Deleted an item.")
+                    confirm = driver.find_elements(By.XPATH, "//div[@aria-label='Move' or                                                                @aria-label='Delete' or                                                                @aria-label='Μετακίνηση' or                                                                @aria-label='Διαγραφή']")
+                    if confirm:
+                        confirm[0].click()
+                    log("Deleted or unliked an item.")
                     time.sleep(2)
             except Exception as e:
                 log(f"Error: {e}")
