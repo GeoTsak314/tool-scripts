@@ -78,6 +78,8 @@ pyinstaller --onefile --windowed facebook_cleaner.py
 
 Το αρχείο θα δημιουργηθεί στον φάκελο `dist/`.
 
+(αργότερα θα συμπεριληφθεί στο repo)
+
 ---
 
 ## 🤝 Συνεισφορά
