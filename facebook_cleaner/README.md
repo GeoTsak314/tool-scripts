@@ -7,6 +7,8 @@
 
 This script automates the removal of **posts**, **comments**, and **likes** from your personal Facebook profile. It supports both **English** and **Greek** versions of Facebook and offers options for date filtering and logging.
 
+(actually... it's a small tool that Meta would hate to see you using it, since all their incomes are based on advertisment, which is based in turn to your FB history...)
+
 ⚠️ **IMPORTANT:** The script does not interfere with your Messenger messages or other private content.
 
 ---
@@ -15,7 +17,7 @@ This script automates the removal of **posts**, **comments**, and **likes** from
 
 - ✅ Delete **posts**, **comments**, and **likes** from the Activity Log
 - ✅ Supports **English** and **Greek** Facebook interfaces
-- ✅ Set a **starting date** for deletions (e.g., only delete from 2022 onwards)
+- ✅ Set a **starting date** for deletions (e.g., only delete from 2022 onwards) -> Use carefully! 
 - ✅ Optional **logging**
 - ✅ Fully automated via Selenium
 
