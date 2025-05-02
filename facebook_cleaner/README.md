@@ -1,5 +1,9 @@
 
-# Facebook Cleaner (Posts, Comments & Likes Remover)
+# Facebook Cleaner
+
+[![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://github.com/yourusername/facebook-cleaner)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.8%2B-yellow.svg)](https://www.python.org/)
 
 This script automates the removal of **posts**, **comments**, and **likes** from your personal Facebook profile. It supports both **English** and **Greek** versions of Facebook and offers options for date filtering and logging.
 
@@ -78,7 +82,6 @@ pyinstaller --onefile --windowed facebook_cleaner_with_likes.py
 
 The `.exe` file will be created in the `dist/` folder.
 
-(later on it will be included in the repo!)
 ---
 
 ## 🤝 Contributing
