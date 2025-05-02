@@ -1,3 +1,5 @@
+# Facebook_cleaner v2.0 by George Tsakalos (2025)
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
