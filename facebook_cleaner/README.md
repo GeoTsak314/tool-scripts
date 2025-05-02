@@ -1,7 +1,7 @@
 
 # Facebook Cleaner
 
-[![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://github.com/yourusername/facebook-cleaner)
+[![Version](https://img.shields.io/badge/version-2.0-blue.svg)](https://github.com/yourusername/facebook-cleaner)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8%2B-yellow.svg)](https://www.python.org/)
 
