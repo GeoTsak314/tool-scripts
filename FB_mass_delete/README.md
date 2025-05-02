@@ -1,7 +1,7 @@
 
-# Facebook Cleaner (Posts & Comments Remover)
+# Facebook Cleaner (Posts, Comments & Likes Remover)
 
-Αυτό το script αυτοματοποιεί τη διαδικασία διαγραφής **αναρτήσεων** (posts) και **σχολίων** (comments) από το προσωπικό σας προφίλ στο Facebook. Υποστηρίζει τόσο την **αγγλική** όσο και την **ελληνική** έκδοση του Facebook και παρέχει επιλογές για ημερομηνία έναρξης και ενεργοποίηση logging.
+Αυτό το script αυτοματοποιεί τη διαδικασία διαγραφής **αναρτήσεων** (posts), **σχολίων** (comments) και **likes** από το προσωπικό σας προφίλ στο Facebook. Υποστηρίζει τόσο την **αγγλική** όσο και την **ελληνική** έκδοση του Facebook και παρέχει επιλογές για ημερομηνία έναρξης και ενεργοποίηση logging.
 
 ⚠️ **ΠΡΟΣΟΧΗ:** Το script δεν επεμβαίνει στα μηνύματα Messenger ή σε άλλες λειτουργίες του λογαριασμού σας.
 
@@ -9,7 +9,7 @@
 
 ## 🔧 Λειτουργίες
 
-- ✅ Διαγραφή **posts** και **comments** από το Activity Log
+- ✅ Διαγραφή **posts**, **comments** και **likes** από το Activity Log
 - ✅ Υποστήριξη για **αγγλικά** και **ελληνικά**
 - ✅ Ορισμός **ημερομηνίας** έναρξης διαγραφών (π.χ. από 2022 και μετά)
 - ✅ Επιλογή για **logging**
@@ -35,13 +35,13 @@ pip install selenium
 1. **Κατέβασε το script**:
 
 ```
-facebook_cleaner_extended.py
+facebook_cleaner.py
 ```
 
 2. **Άνοιξε το τερματικό** και εκτέλεσε:
 
 ```bash
-python facebook_cleaner_extended.py
+python facebook_cleaner.py
 ```
 
 3. Θα σου ζητηθούν:
@@ -56,7 +56,7 @@ python facebook_cleaner_extended.py
 ## 🛡️ Ασφάλεια
 
 - Δεν αποθηκεύεται κανένα απολύτως στοιχείο login
-- Το script δεν αγγίζει προσωπικά μηνύματα ή likes
+- Το script δεν αγγίζει προσωπικά μηνύματα
 
 ---
 
@@ -73,12 +73,10 @@ pip install pyinstaller
 2. Δημιουργία `.exe`:
 
 ```bash
-pyinstaller --onefile --windowed facebook_cleaner_extended.py
+pyinstaller --onefile --windowed facebook_cleaner.py
 ```
 
 Το αρχείο θα δημιουργηθεί στον φάκελο `dist/`.
-
-(σε νέα έκδοση θα συμπεριλαμβάνεται και το exe στο repo...)
 
 ---
 
