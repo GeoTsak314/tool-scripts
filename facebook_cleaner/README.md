@@ -41,13 +41,13 @@ pip install selenium
 1. **Download the script**:
 
 ```
-facebook_cleaner_with_likes.py
+facebook_cleaner.py
 ```
 
 2. **Run it via terminal**:
 
 ```bash
-python facebook_cleaner_with_likes.py
+python facebook_cleaner.py
 ```
 
 3. You will be prompted to enter:
@@ -79,7 +79,7 @@ pip install pyinstaller
 2. Create the executable:
 
 ```bash
-pyinstaller --onefile --windowed facebook_cleaner_with_likes.py
+pyinstaller --onefile --windowed facebook_cleaner.py
 ```
 
 The `.exe` file will be created in the `dist/` folder.
