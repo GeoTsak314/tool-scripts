@@ -7,7 +7,9 @@
 
 This script automates the removal of **posts**, **comments**, and **likes** from your personal Facebook profile. It supports both **English** and **Greek** versions of Facebook and offers options for date filtering and logging.
 
-(actually... it's a small tool that Meta would hate to see you using it, since all their incomes are based on advertisment, which is based in turn to your FB history...)
+I came along with this script, because I wanted to erase all my previous FB history & just keep the messenger (with all my current friends/connections...), but Meta doesn't offer this option! They just give you the option to delete each comment/like/post seperately... 
+So I came up with this script that does exactly that, but in massive automated scale & relieves you from this repetitive stupid task!
+(actually... it's a small tool that Meta hates to see you using it, since all their incomes are based on advertisment, which is based in turn to your FB history...)
 
 ⚠️ **IMPORTANT:** The script does not interfere with your Messenger messages or other private content.
 
